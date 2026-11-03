@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liliana Montiel — Senior Data Analyst</title>
+<style>
+  :root{
+    --bg:#0b1020; --bg-2:#111833; --surface:#151d3b; --surface-2:#1b2547;
+    --text:#eef2ff; --text-dim:#aab3d6; --muted:#7c87b3;
+    --primary:#4f8cff; --primary-2:#38e8c6; --border:rgba(255,255,255,.08);
+    --radius:16px; --font: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --mono:'SF Mono',ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.6;
+       background-image:radial-gradient(900px 500px at 80% -10%,rgba(79,140,255,.18),transparent),
+                        radial-gradient(700px 500px at -10% 10%,rgba(56,232,198,.12),transparent);}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  a{color:inherit;text-decoration:none}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(10px);
+      background:rgba(11,16,32,.72);border-bottom:1px solid var(--border)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-weight:700;letter-spacing:.3px}
+  .brand span{color:var(--primary-2)}
+  .nav-links a{color:var(--text-dim);margin-left:28px;font-size:14px;transition:color .15s}
+  .nav-links a:hover{color:var(--text)}
+
+  /* HERO */
+  header{padding:96px 0 72px}
+  .eyebrow{color:var(--primary-2);font-family:var(--mono);font-size:13px;letter-spacing:2px;text-transform:uppercase}
+  h1{font-size:clamp(34px,6vw,58px);line-height:1.08;margin:16px 0 18px;font-weight:800;
+     background:linear-gradient(120deg,#fff,#aab3d6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{font-size:clamp(16px,2.4vw,20px);color:var(--text-dim);max-width:720px}
+  .cta{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{padding:12px 20px;border-radius:999px;font-weight:600;font-size:14px;transition:transform .15s,box-shadow .15s;border:1px solid var(--border)}
+  .btn.primary{background:linear-gradient(120deg,var(--primary),var(--primary-2));color:#07122a;border:none}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(79,140,255,.25)}
+
+  section{padding:56px 0}
+  .sec-title{font-size:13px;font-family:var(--mono);letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  h2{font-size:clamp(24px,4vw,34px);font-weight:800;margin-bottom:28px}
+
+  /* ABOUT + skills */
+  .about{color:var(--text-dim);max-width:760px;font-size:17px}
+  .chips{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+  .chip{background:var(--surface);border:1px solid var(--border);padding:7px 14px;border-radius:999px;
+        font-size:13px;color:var(--text-dim);font-family:var(--mono)}
+
+  /* PROJECTS */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+  .card{background:linear-gradient(180deg,var(--surface),var(--bg-2));border:1px solid var(--border);
+        border-radius:var(--radius);padding:26px;transition:transform .2s,border-color .2s;position:relative;overflow:hidden}
+  .card:hover{transform:translateY(-4px);border-color:rgba(79,140,255,.5)}
+  .card .tag{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--primary-2);text-transform:uppercase}
+  .card h3{font-size:20px;margin:10px 0 10px;font-weight:700}
+  .card p{color:var(--text-dim);font-size:15px}
+  .metric{margin:16px 0;padding:12px 14px;background:rgba(56,232,198,.08);border:1px solid rgba(56,232,198,.22);
+          border-radius:10px;font-size:14px;color:var(--text)}
+  .metric b{color:var(--primary-2);font-family:var(--mono)}
+  .stack{margin-top:14px;display:flex;flex-wrap:wrap;gap:7px}
+  .stack span{font-size:12px;color:var(--muted);font-family:var(--mono);background:var(--surface-2);padding:4px 9px;border-radius:7px}
+  .card .link{display:inline-flex;align-items:center;gap:6px;margin-top:18px;color:var(--primary);font-weight:600;font-size:14px}
+  .card .link:hover{gap:10px;transition:gap .15s}
+
+  /* CONTACT */
+  .contact{text-align:center;background:linear-gradient(180deg,var(--surface),var(--bg-2));
+           border:1px solid var(--border);border-radius:var(--radius);padding:48px 24px}
+  .contact h2{margin-bottom:12px}
+  .contact p{color:var(--text-dim);margin-bottom:24px}
+  footer{padding:40px 0;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--border);margin-top:40px}
+
+  .reveal{opacity:0;transform:translateY(14px)}
+  @media (prefers-reduced-motion:no-preference){
+    .reveal.in{opacity:1;transform:none;transition:opacity .5s ease-out,transform .5s ease-out}
+  }
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="brand">Liliana<span>.</span>Montiel</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+    <a href="https://github.com/llmontiel" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header><div class="wrap">
+  <div class="eyebrow">Senior Data Analyst</div>
+  <h1>I turn supply-chain data<br>into decisions.</h1>
+  <p class="lead">I integrate AI/ML into supply chain to cut stockouts, sharpen forecasts, and
+  automate reporting — building data products that move operational metrics, not just dashboards.</p>
+  <div class="cta">
+    <a class="btn primary" href="#work">View my work</a>
+    <a class="btn" href="https://github.com/llmontiel" target="_blank" rel="noopener">GitHub profile</a>
+  </div>
+</div></header>
+
+<section id="about"><div class="wrap">
+  <div class="sec-title">About</div>
+  <h2>What I do</h2>
+  <p class="about">I build forecasting engines that beat the baseline, pipelines that turn hours of
+  manual reporting into a single command, and AI tools that let non-technical teammates query data
+  in plain English. My focus is demand planning, in-stock performance, and inventory for retail &amp;
+  grocery — the places where a better model shows up directly in service levels and working capital.</p>
+  <div class="chips">
+    <div class="chip">Python</div><div class="chip">SQL</div><div class="chip">pandas</div>
+    <div class="chip">scikit-learn</div><div class="chip">LightGBM</div><div class="chip">Time-series forecasting</div>
+    <div class="chip">Excel automation</div><div class="chip">matplotlib</div><div class="chip">LLM tooling</div>
+    <div class="chip">Supply chain / demand planning</div>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <div class="sec-title">Selected work</div>
+  <h2>Featured projects</h2>
+  <div class="grid">
+
+    <div class="card reveal">
+      <div class="tag">Forecasting · ML</div>
+      <h3>Demand Forecasting Engine</h3>
+      <p>SKU-level demand forecasting for grocery retail, with honest backtesting against a seasonal-naive baseline.</p>
+      <div class="metric">Cuts forecast error by <b>~45%</b> vs. baseline (WAPE <b>15.8%</b> vs <b>28.6%</b>)</div>
+      <div class="stack"><span>pandas</span><span>LightGBM</span><span>backtesting</span><span>WAPE/MAPE/bias</span></div>
+      <a class="link" href="https://github.com/llmontiel/demand-forecasting-engine" target="_blank" rel="noopener">View repo →</a>
+    </div>
+
+    <div class="card reveal">
+      <div class="tag">Automation · Reporting</div>
+      <h3>Automated Reporting Pipeline</h3>
+      <p>Raw CSV export to a polished, multi-sheet Excel report with embedded charts — in one command.</p>
+      <div class="metric">Cleans + aggregates <b>15K+</b> transactions into a formatted workbook</div>
+      <div class="stack"><span>pandas</span><span>xlsxwriter</span><span>data cleaning</span><span>Excel charts</span></div>
+      <a class="link" href="https://github.com/llmontiel/automated-reporting-pipeline" target="_blank" rel="noopener">View repo →</a>
+    </div>
+
+    <div class="card reveal">
+      <div class="tag">AI · LLM</div>
+      <h3>LLM Analytics Assistant</h3>
+      <p>Ask a sales dataset questions in plain English. A safe "LLM plans, code executes" design keeps answers real.</p>
+      <div class="metric">Answers are <b>real pandas aggregations</b> — never hallucinated numbers</div>
+      <div class="stack"><span>LLM planning</span><span>pandas</span><span>safe execution</span><span>NL→query</span></div>
+      <a class="link" href="https://github.com/llmontiel/llm-analytics-assistant" target="_blank" rel="noopener">View repo →</a>
+    </div>
+
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="contact">
+    <h2>Let's talk</h2>
+    <p>Open to data analyst &amp; analytics engineering roles. Let's connect.</p>
+    <div class="cta" style="justify-content:center">
+      <a class="btn primary" href="https://linkedin.com/in/liliana-montiel" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/llmontiel" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">© <span id="yr"></span> Liliana Montiel · Built with HTML, CSS &amp; a little help. Hosted on GitHub Pages.</div></footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{ el.style.transitionDelay=(i*60)+'ms'; io.observe(el); });
+</script>
+</body>
+</html>
