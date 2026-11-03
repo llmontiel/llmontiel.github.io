@@ -68,7 +68,8 @@
   .metric b{color:var(--accent);font-weight:500}
   .stack{margin-top:13px;display:flex;flex-wrap:wrap;gap:6px}
   .stack span{font-size:11.5px;color:var(--muted);font-family:var(--mono);background:var(--surface-2);padding:3px 8px;border-radius:6px}
-  .card .link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--accent);font-weight:600;font-size:14px;font-family:var(--mono)}
+  .card .links{margin-top:16px;display:flex;gap:16px;flex-wrap:wrap}
+  .card .link{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:600;font-size:14px;font-family:var(--mono)}
   .card .link:hover{gap:10px;transition:gap .15s}
 
   /* CONTACT */
@@ -135,7 +136,7 @@
       <p>SKU-level demand forecasting for grocery retail, with honest backtesting against a seasonal-naive baseline.</p>
       <div class="metric">Cuts forecast error by <b>~45%</b> vs. baseline (WAPE <b>15.8%</b> vs <b>28.6%</b>)</div>
       <div class="stack"><span>pandas</span><span>LightGBM</span><span>backtesting</span><span>WAPE/MAPE/bias</span></div>
-      <a class="link" href="https://github.com/llmontiel/demand-forecasting-engine" target="_blank" rel="noopener">View repo →</a>
+      <div class="links"><a class="link" href="https://github.com/llmontiel/demand-forecasting-engine" target="_blank" rel="noopener">View repo →</a></div>
     </div>
 
     <div class="card reveal">
@@ -144,7 +145,7 @@
       <p>Raw CSV export to a polished, multi-sheet Excel report with embedded charts — in one command.</p>
       <div class="metric">Cleans + aggregates <b>15K+</b> transactions into a formatted workbook</div>
       <div class="stack"><span>pandas</span><span>xlsxwriter</span><span>data cleaning</span><span>Excel charts</span></div>
-      <a class="link" href="https://github.com/llmontiel/automated-reporting-pipeline" target="_blank" rel="noopener">View repo →</a>
+      <div class="links"><a class="link" href="https://github.com/llmontiel/automated-reporting-pipeline" target="_blank" rel="noopener">View repo →</a></div>
     </div>
 
     <div class="card reveal">
@@ -153,7 +154,7 @@
       <p>Ask a sales dataset questions in plain English. A safe "LLM plans, code executes" design keeps answers real.</p>
       <div class="metric">Answers are <b>real pandas aggregations</b> — never hallucinated numbers</div>
       <div class="stack"><span>LLM planning</span><span>pandas</span><span>safe execution</span><span>NL→query</span></div>
-      <a class="link" href="https://github.com/llmontiel/llm-analytics-assistant" target="_blank" rel="noopener">View repo →</a>
+      <div class="links"><a class="link" href="https://github.com/llmontiel/llm-analytics-assistant" target="_blank" rel="noopener">View repo →</a></div>
     </div>
 
     <div class="card reveal">
@@ -162,7 +163,7 @@
       <p>A star-schema warehouse with analytical queries answering real merchandising questions.</p>
       <div class="metric">Window functions, <b>CTEs</b>, ranking &amp; <b>period-over-period</b> growth</div>
       <div class="stack"><span>SQL</span><span>star schema</span><span>window functions</span><span>SQLite</span></div>
-      <a class="link" href="https://github.com/llmontiel/sql-retail-analytics" target="_blank" rel="noopener">View repo →</a>
+      <div class="links"><a class="link" href="https://github.com/llmontiel/sql-retail-analytics" target="_blank" rel="noopener">View repo →</a></div>
     </div>
 
     <div class="card reveal">
@@ -171,7 +172,10 @@
       <p>Interactive in-stock, demand, inventory and revenue dashboard with live filters by region, store, and date.</p>
       <div class="metric">Operational KPIs — <b>in-stock rate</b> &amp; <b>demand fill</b>, recomputing live</div>
       <div class="stack"><span>Streamlit</span><span>Plotly</span><span>pandas</span><span>KPIs</span></div>
-      <a class="link" href="https://github.com/llmontiel/supply-chain-dashboard" target="_blank" rel="noopener">View repo →</a>
+      <div class="links">
+        <a class="link" href="https://supply-chain-dashboard-vpvl3qyrskqzwuaf8twxri.streamlit.app" target="_blank" rel="noopener">Live demo →</a>
+        <a class="link" href="https://github.com/llmontiel/supply-chain-dashboard" target="_blank" rel="noopener">View repo →</a>
+      </div>
     </div>
 
   </div>
