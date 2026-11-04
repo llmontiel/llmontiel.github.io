@@ -117,9 +117,9 @@
   in plain English. My focus is demand planning, in-stock performance, and inventory for retail &amp;
   grocery — the places where a better model shows up directly in service levels and working capital.</p>
   <div class="chips">
-    <div class="chip">Python</div><div class="chip">SQL</div><div class="chip">pandas</div>
+    <div class="chip">Python</div><div class="chip">SQL</div><div class="chip">R</div><div class="chip">pandas</div>
     <div class="chip">scikit-learn</div><div class="chip">LightGBM</div><div class="chip">Time-series forecasting</div>
-    <div class="chip">Star schemas / window functions</div><div class="chip">Streamlit / Plotly</div>
+    <div class="chip">Star schemas / window functions</div><div class="chip">Streamlit / Plotly</div><div class="chip">D3.js</div>
     <div class="chip">Excel automation</div><div class="chip">LLM tooling</div>
     <div class="chip">Supply chain / demand planning</div>
   </div>
@@ -140,12 +140,15 @@
     </div>
 
     <div class="card reveal">
-      <div class="tag">Automation · Reporting</div>
-      <h3>Automated Reporting Pipeline</h3>
-      <p>Raw CSV export to a polished, multi-sheet Excel report with embedded charts — in one command.</p>
-      <div class="metric">Cleans + aggregates <b>15K+</b> transactions into a formatted workbook</div>
-      <div class="stack"><span>pandas</span><span>xlsxwriter</span><span>data cleaning</span><span>Excel charts</span></div>
-      <div class="links"><a class="link" href="https://github.com/llmontiel/automated-reporting-pipeline" target="_blank" rel="noopener">View repo →</a></div>
+      <div class="tag">Dashboard · Viz</div>
+      <h3>Supply Chain KPI Dashboard</h3>
+      <p>Interactive in-stock, demand, inventory and revenue dashboard with live filters by region, store, and date.</p>
+      <div class="metric">Operational KPIs — <b>in-stock rate</b> &amp; <b>demand fill</b>, recomputing live</div>
+      <div class="stack"><span>Streamlit</span><span>Plotly</span><span>pandas</span><span>KPIs</span></div>
+      <div class="links">
+        <a class="link" href="https://supply-chain-dashboard-vpvl3qyrskqzwuaf8twxri.streamlit.app" target="_blank" rel="noopener">Live demo →</a>
+        <a class="link" href="https://github.com/llmontiel/supply-chain-dashboard" target="_blank" rel="noopener">View repo →</a>
+      </div>
     </div>
 
     <div class="card reveal">
@@ -167,15 +170,42 @@
     </div>
 
     <div class="card reveal">
-      <div class="tag">Dashboard · Viz</div>
-      <h3>Supply Chain KPI Dashboard</h3>
-      <p>Interactive in-stock, demand, inventory and revenue dashboard with live filters by region, store, and date.</p>
-      <div class="metric">Operational KPIs — <b>in-stock rate</b> &amp; <b>demand fill</b>, recomputing live</div>
-      <div class="stack"><span>Streamlit</span><span>Plotly</span><span>pandas</span><span>KPIs</span></div>
+      <div class="tag">Dashboard · D3.js</div>
+      <h3>D3.js Supply Chain Dashboard</h3>
+      <p>Interactive browser-based dashboard built with D3.js — in-stock trends, revenue, and regional KPIs with hover tooltips.</p>
+      <div class="metric">Hand-built D3 scales, axes &amp; charts — <b>live on GitHub Pages</b></div>
+      <div class="stack"><span>D3.js</span><span>JavaScript</span><span>data-viz</span><span>GitHub Pages</span></div>
       <div class="links">
-        <a class="link" href="https://supply-chain-dashboard-vpvl3qyrskqzwuaf8twxri.streamlit.app" target="_blank" rel="noopener">Live demo →</a>
-        <a class="link" href="https://github.com/llmontiel/supply-chain-dashboard" target="_blank" rel="noopener">View repo →</a>
+        <a class="link" href="https://llmontiel.github.io/d3-supply-chain-dashboard" target="_blank" rel="noopener">Live demo →</a>
+        <a class="link" href="https://github.com/llmontiel/d3-supply-chain-dashboard" target="_blank" rel="noopener">View repo →</a>
       </div>
+    </div>
+
+    <div class="card reveal">
+      <div class="tag">Forecasting · R</div>
+      <h3>Forecasting in R</h3>
+      <p>Weekly demand forecasting in R — auto.arima and ETS, backtested against a seasonal-naive baseline.</p>
+      <div class="metric">Classical time-series with <b>prediction intervals</b> — the R complement to my Python engine</div>
+      <div class="stack"><span>R</span><span>forecast pkg</span><span>ARIMA / ETS</span><span>time-series</span></div>
+      <div class="links"><a class="link" href="https://github.com/llmontiel/forecasting-in-r" target="_blank" rel="noopener">View repo →</a></div>
+    </div>
+
+    <div class="card reveal">
+      <div class="tag">SQL · Inventory</div>
+      <h3>Inventory Health SQL</h3>
+      <p>Operational SQL for retail inventory — stockout rates, days-of-supply, a replenishment watch list, and turns.</p>
+      <div class="metric">Gaps-and-islands streaks, rolling windows &amp; <b>reorder logic</b></div>
+      <div class="stack"><span>SQL</span><span>SQLite</span><span>inventory</span><span>window functions</span></div>
+      <div class="links"><a class="link" href="https://github.com/llmontiel/inventory-health-sql" target="_blank" rel="noopener">View repo →</a></div>
+    </div>
+
+    <div class="card reveal">
+      <div class="tag">Automation · Reporting</div>
+      <h3>Automated Reporting Pipeline</h3>
+      <p>Raw CSV export to a polished, multi-sheet Excel report with embedded charts — in one command.</p>
+      <div class="metric">Cleans + aggregates <b>15K+</b> transactions into a formatted workbook</div>
+      <div class="stack"><span>pandas</span><span>xlsxwriter</span><span>data cleaning</span><span>Excel charts</span></div>
+      <div class="links"><a class="link" href="https://github.com/llmontiel/automated-reporting-pipeline" target="_blank" rel="noopener">View repo →</a></div>
     </div>
 
   </div>
@@ -200,7 +230,7 @@
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   },{threshold:.15});
-  document.querySelectorAll('.reveal').forEach((el,i)=>{ el.style.transitionDelay=(i*60)+'ms'; io.observe(el); });
+  document.querySelectorAll('.reveal').forEach((el,i)=>{ el.style.transitionDelay=(i*55)+'ms'; io.observe(el); });
 </script>
 </body>
 </html>
